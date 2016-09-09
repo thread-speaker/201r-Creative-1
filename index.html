@@ -1,9 +1,123 @@
 <html>
-  <head>
-    <title>Creative project 1</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-  </head>
-  <body>
-    <h1 class="header">Content Here</h1>
-  </body>
+<head>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+
+	<div class="page-wrap">
+
+		<nav>
+			<div class="nav-wrapper container">
+				<a href="#" class="brand-logo">City Finder</a>
+
+			</div>
+		</nav>
+
+		<div class="row container" style="margin-top:20px">
+			<div class="col s12 m6">
+				<div class="card hoverable grey lighten-5">
+					<div class="card-content">
+						<span class="card-title">Enter a name of a city that resides in Utah.</span>
+						<div class="row">
+							<div class="input-field col s6">
+								<input placeholder="Provo" id="city_name" type="text" class="validate">
+								<label for="city_name">City Name</label>
+							</div>
+							<div class="input-field col s6">
+								<a class="waves-effect waves-light btn" id="submit_btn">Submit</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s6">
+							<textarea id="city_list"></textarea>
+							</div>
+						</div>
+
+					</div>
+					
+				</div>
+
+				<div class="card hoverable grey lighten-5" id="weather_card">
+					<div class="card-content" id="weather_results">
+						<span class="card-title">Results</span>
+						<p id="weather_results_loc"></p>
+						<p id="weather_results_temp"></p>
+						<p id="weather_results_weather"></p>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m6">
+				<div class="card hoverable grey lighten-5">
+					<div class="card-content">
+						<span class="card-title">Suggestions</span>
+						<p>Cities:</p>
+						<ul id="results" class="collection">
+							
+						</ul>
+					</div>
+				</div>
+				<div class="card hoverable grey lighten-5">
+					<div class="card-content">
+						<span class="card-title">Check a dictionary!</span>
+						<p>Enter a word:</p>
+						<div class="row">
+							<div class="input-field col s6">
+								<input placeholder="Sunny" id="word" type="text" class="validate">
+								<label for="word">Word</label>
+							</div>
+							<div class="input-field col s6">
+								<a class="waves-effect waves-light btn" id="definition_submit_btn">Submit</a>
+							</div>
+						</div>
+
+
+						<p>Results:</p>
+						<ul id="definition_results" class="collection">
+							
+						</ul>
+
+
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+
+
+
+	</div>
+	<footer class="page-footer">
+		<div class="container">
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				&copy; 2016 Matt
+				<a class="grey-text text-lighten-4 right" href="http://profusiondev.net">profusiondev.net</a>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</body>
 </html>
+
