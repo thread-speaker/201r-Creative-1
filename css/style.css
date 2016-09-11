@@ -13,3 +13,7 @@ html, body {
 footer, .page-wrap:after {
   height: 70px; 
 }
+
+.card-content {
+	text-align: center;
+}
