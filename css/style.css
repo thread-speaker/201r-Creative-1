@@ -5,8 +5,8 @@ html, body {
 .page-wrap {
 	min-height: 100%;
 	margin-bottom: -90px; 
-	background: url('../img/genji-theatrical-standard.jpg');
-
+	background: url('../img/genji-theatrical-standard.jpg') no-repeat center center fixed;
+	background-size: cover;
 }
 .page-wrap:after {
 	content: "";
