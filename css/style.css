@@ -20,4 +20,9 @@ footer.page-footer {
 }
 nav, footer.page-footer {
 	background-color: rgba(40, 53, 79, 0.9);
+  height: 70px; 
+}
+
+.card-content {
+	text-align: center;
 }
