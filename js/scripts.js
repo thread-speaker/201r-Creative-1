@@ -7,7 +7,7 @@ function filterChange(e) {
 	if(queryName != "" || queryTypes.length > 0) {
 		$('.card.filterable').hide();
 		$('.card.filterable').filter(function(){ console.log(queryTypes, $(this).data("map-type"));
-					 	   var isSameMapType = queryTypes.length > 0 && queryTypes.indexOf($(this).data("map-type")) >= 0 ;
+					 	   var isSameMapType = queryTypes.length == 0 || queryTypes.indexOf($(this).data("map-type")) >= 0 ;
 							return isSameMapType 
 					}).filter(function() {
 						var hasSubstringInName = queryName == "" || $(this).data("map-name").toLowerCase().indexOf(queryName) >= 0;
@@ -16,8 +16,14 @@ function filterChange(e) {
 	} else {
 		$('.card.filterable').show();
 	}
+	refreshMasonry();
 }
 
+function refreshMasonry() {
+	$('#parentMason').masonry({
+	  itemSelector: '.col'
+	});
+}
 
 
 $('.card.filterable .under-card-image').each(function() {
@@ -27,3 +33,11 @@ $('.card.filterable .under-card-image').each(function() {
 		'background-size':'cover'
 	})
 })
+
+
+
+
+
+$( document ).ready(function() {
+	refreshMasonry();
+});
