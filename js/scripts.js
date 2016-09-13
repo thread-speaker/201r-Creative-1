@@ -20,28 +20,6 @@ function filterChange(e) {
 
 
 
-//$('.card.filterable img').hover(hoverOver, hoverOut);
-
-
-/*function hoverOver(e) {
-	$(this).attr('src', function() {
-		return $(this).data('map-overlay');
-	});
-}
-
-function hoverOut(e) {
-	$(this).attr('src', function() {
-		return $(this).data('map-original-image');
-	});
-}
-
-
-$('.card.filterable img').each( function() {
-	console.log("Original image:", $(this).attr('src'));
-	$(this).data('map-original-image', $(this).attr('src'));
-	console.log("After image:", $(this).data('map-overlay'));
-});*/
-
 $('.card.filterable .under-card-image').each(function() {
 	var url = $(this).find("img").data("map-overlay");
 	$(this).css({
@@ -49,12 +27,3 @@ $('.card.filterable .under-card-image').each(function() {
 		'background-size':'cover'
 	})
 })
-
-/*function hoverOver(e) {
-	$(this).css({opacity:0});
-}
-
-function hoverOut(e) {
-	$(this).css({opacity:1});
-}
-*/
