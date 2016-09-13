@@ -23,7 +23,12 @@ nav, footer.page-footer {
   height: 70px; 
 }
 
-
+.card.filterable img {
+	-webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
 
 .card.filterable img:hover {
 	opacity:0;
