@@ -58,4 +58,9 @@ $('.card.filterable .under-card-image').each(function() {
 
 $( document ).ready(function() {
 	refreshMasonry();
+	setTimeout(refreshMasonry, 2000);
 });
+
+$(window).on("load",function() {
+	refreshMasonry();
+}); 
