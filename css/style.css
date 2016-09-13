@@ -23,3 +23,8 @@ nav, footer.page-footer {
   height: 70px; 
 }
 
+
+
+.card.filterable img:hover {
+	opacity:0;
+}

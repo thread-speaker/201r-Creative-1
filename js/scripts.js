@@ -6,9 +6,12 @@ function filterChange(e) {
 	var queryTypes = $('input[type=checkbox]:checked').map(function() { return $(this).data("map-type"); }).get(); 
 	if(queryName != "" || queryTypes.length > 0) {
 		$('.card.filterable').hide();
-		$('.card.filterable').filter(function()
-					 {   return queryTypes.indexOf($(this).data("map-type")) >= 0 
-								|| $(this).data("map-name").toLowerCase().indexOf(queryName) >= 0
+		$('.card.filterable').filter(function(){ console.log(queryTypes, $(this).data("map-type"));
+					 	   var isSameMapType = queryTypes.length > 0 && queryTypes.indexOf($(this).data("map-type")) >= 0 ;
+							return isSameMapType 
+					}).filter(function() {
+						var hasSubstringInName = queryName == "" || $(this).data("map-name").toLowerCase().indexOf(queryName) >= 0;
+						return hasSubstringInName;
 					}).show();
 	} else {
 		$('.card.filterable').show();
@@ -17,10 +20,10 @@ function filterChange(e) {
 
 
 
-$('.card.filterable img').hover(hoverOver, hoverOut);
+//$('.card.filterable img').hover(hoverOver, hoverOut);
 
 
-function hoverOver(e) {
+/*function hoverOver(e) {
 	$(this).attr('src', function() {
 		return $(this).data('map-overlay');
 	});
@@ -37,4 +40,21 @@ $('.card.filterable img').each( function() {
 	console.log("Original image:", $(this).attr('src'));
 	$(this).data('map-original-image', $(this).attr('src'));
 	console.log("After image:", $(this).data('map-overlay'));
-});
+});*/
+
+$('.card.filterable .under-card-image').each(function() {
+	var url = $(this).find("img").data("map-overlay");
+	$(this).css({
+		'background-image':"url('" + url + "')",
+		'background-size':'cover'
+	})
+})
+
+/*function hoverOver(e) {
+	$(this).css({opacity:0});
+}
+
+function hoverOut(e) {
+	$(this).css({opacity:1});
+}
+*/
