@@ -1,3 +1,6 @@
+/* Force Scrollbar to be visible at all times */
+html {overflow-y: scroll;}
+
 /* Full Height Page */
 html, body {
 	height: 100%;
@@ -5,7 +8,7 @@ html, body {
 .page-wrap {
 	min-height: 100%;
 	margin-bottom: -90px; 
-	background: url('../img/genji-theatrical-standard.jpg') no-repeat center center fixed;
+	background: url('../img/genji-theatrical-standard.jpg') no-repeat left top fixed;
 	background-size: cover;
 }
 .page-wrap:after {
@@ -16,20 +19,77 @@ footer, .page-wrap:after {
 	height: 70px; 
 }
 footer.page-footer {
-   /*margin-top:0px;*/
+	/*margin-top:0px;*/
 }
 nav, footer.page-footer {
 	background-color: rgba(40, 53, 79, 0.9);
-  height: 70px; 
+	height: 70px; 
 }
 
+/* Slowly transitions opacity changes over 1 second */
 .card.filterable img {
 	-webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
 }
 
+/* Hover, map images go to transparent */
 .card.filterable img:hover {
 	opacity:0;
+}
+
+/* Space out paragraphs on cards */
+.card.filterable .card-content p {
+	padding-top:10px;
+}
+
+/* Have more horizonal spacing for the footer pipe */
+span.pipe {
+	margin-left:8px;
+	margin-right:8px;
+}
+
+
+
+/* === Colors===	*/
+
+
+nav .brand-logo, footer.page-footer .footer-copyright {
+	color: #dbdbee;
+}
+
+/* Override checkbox foreground check colored orange */
+[type="checkbox"].filled-in:checked+label:before {
+	border-right: 2px solid #f7931e;
+	border-bottom: 2px solid #f7931e;
+}
+/* Override checkbox background colored grey */
+[type="checkbox"].filled-in:checked+label:after {
+	border: 2px solid #293549;
+	background-color: #283448;
+}
+
+/* Input label colored orange */
+input[type=text]:focus:not([readonly])+label {
+	color: #f7931e;
+}
+
+/* Input field colored bar orange */
+input[type=text].valid, input[type=text]:focus,input[type=text]:focus:not([readonly]), input[type=text]:focus.valid {
+	border-bottom: 1px solid #f7931e;
+	box-shadow: 0 1px 0 0 #f7931e;
+}
+
+/* Give credits a grey text color */
+span.credits {
+	color:#dbdbee;
+}
+/* Credit links colored orange */
+span.credits a {
+	color:#f7931e;
+}
+/* Credit links are underlined when hovered  */
+span.credits a:hover {
+	text-decoration: underline;
 }
