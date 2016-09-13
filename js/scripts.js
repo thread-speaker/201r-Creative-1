@@ -14,3 +14,27 @@ function filterChange(e) {
 		$('.card.filterable').show();
 	}
 }
+
+
+
+$('.card.filterable img').hover(hoverOver, hoverOut);
+
+
+function hoverOver(e) {
+	$(this).attr('src', function() {
+		return $(this).data('map-overlay');
+	});
+}
+
+function hoverOut(e) {
+	$(this).attr('src', function() {
+		return $(this).data('map-original-image');
+	});
+}
+
+
+$('.card.filterable img').each( function() {
+	console.log("Original image:", $(this).attr('src'));
+	$(this).data('map-original-image', $(this).attr('src'));
+	console.log("After image:", $(this).data('map-overlay'));
+});
